@@ -1,22 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  /* Human-Centric Editorial Design System */
   --color-brand-bg: #ffffff;
-  --color-brand-surface: #fcfcf9; /* Slightly warm ivory */
+  --color-brand-surface: #fcfcf9;
   --color-brand-ink: #121212;
-  --color-brand-emerald: #064e3b; /* Deep, soulful green */
+  --color-brand-emerald: #064e3b;
   --color-brand-muted: #6b6b6b;
 
-  /* Typography */
   --font-serif: "Fraunces", serif;
   --font-sans: "Geist", sans-serif;
   --font-arabic: "Noto Sans Arabic", sans-serif;
 
-  /* Proportions */
   --spacing-container: 1200px;
 
-  /* Custom Smooth Shadows */
   --shadow-smooth: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 8px -1px rgba(0, 0, 0, 0.02);
   --shadow-elevated: 0 20px 40px -4px rgba(0, 0, 0, 0.04), 0 8px 16px -2px rgba(0, 0, 0, 0.02);
 }
@@ -26,7 +22,6 @@
     @apply bg-brand-bg text-brand-ink font-sans antialiased selection:bg-brand-emerald selection:text-white;
   }
   
-  /* Grainy texture overlay to remove "sterile AI" look */
   body::before {
     content: "";
     @apply fixed inset-0 pointer-events-none z-[100] opacity-[0.03];
@@ -54,7 +49,6 @@
     @apply font-arabic text-3xl text-right text-brand-ink transition-all duration-700 font-bold;
   }
 
-  /* Asymmetrical Decoration */
   .deco-line {
     @apply h-px bg-brand-ink/10 relative overflow-hidden;
   }
