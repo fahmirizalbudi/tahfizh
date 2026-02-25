@@ -62,7 +62,7 @@ const Navbar = ({ onGetStarted }: { onGetStarted?: () => void }) => (
 );
 
 const Library = ({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement | null> }) => {
-  const { data: surahs, error, isLoading } = useSWR<Surah[]>('/src/assets/quran_id.json', fetcher, {
+  const { data: surahs, error, isLoading } = useSWR<Surah[]>('/quran_id.json', fetcher, {
     dedupingInterval: 300000,
     revalidateOnFocus: false,
   });
@@ -161,7 +161,7 @@ const Library = ({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement | nu
 const SurahDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { data: surahs } = useSWR<Surah[]>('/src/assets/quran_id.json', fetcher);
+  const { data: surahs } = useSWR<Surah[]>('/quran_id.json', fetcher);
   
   const surah = surahs?.find(s => s.id === Number(id));
 
