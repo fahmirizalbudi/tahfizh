@@ -184,7 +184,13 @@ const SurahDetail = () => {
               onClick={() => navigate('/')}
               className="text-[10px] font-bold uppercase tracking-[0.4em] mb-20 flex items-center gap-4 hover:text-brand-emerald transition-colors group"
             >
-              <span className="group-hover:-translate-x-2 transition-transform duration-500">←</span> Back to index
+              <svg 
+                width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
+                className="group-hover:-translate-x-1.5 transition-transform duration-500"
+              >
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+              Back to index
             </button>
             
             <div className="flex flex-col gap-12 border-l border-brand-ink/5 pl-8 mt-40">
