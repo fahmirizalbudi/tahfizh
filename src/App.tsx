@@ -293,20 +293,6 @@ function App() {
           </Routes>
         </AnimatePresence>
       </main>
-
-      <footer className="py-24 border-t border-brand-ink/5 bg-brand-surface relative z-10">
-        <div className="layout-container flex flex-col md:flex-row justify-between items-center gap-12 text-[10px] font-bold uppercase tracking-[0.4em] text-brand-muted">
-          <div className="flex items-center gap-4">
-            <div className="w-6 h-6 bg-brand-ink rotate-45 flex items-center justify-center text-[8px] text-white">T</div>
-            <span className="text-lg font-serif italic tracking-tight normal-case text-brand-ink">Tahfizh</span>
-          </div>
-          <p className="opacity-40">© 2026 Tahfizh — Dedicated to the word of Allah.</p>
-          <div className="flex gap-12 opacity-40 hover:opacity-100 transition-opacity">
-            <a href="#" className="hover:text-brand-emerald">Privacy</a>
-            <a href="#" className="hover:text-brand-emerald">Terms</a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
