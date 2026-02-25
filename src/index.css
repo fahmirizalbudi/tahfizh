@@ -1,29 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  /* Modern Flat Design System */
+  /* Modern Shadow-Based Design System */
   --color-brand-bg: #ffffff;
-  --color-brand-surface: #f9f9f9;
+  --color-brand-surface: #fdfdfd;
   --color-brand-accent: #1a1a1a;
   --color-brand-primary: #1a73e8;
   --color-brand-text: #111111;
   --color-brand-muted: #666666;
 
-  /* Typography - Modern & Proportional */
+  /* Typography */
   --font-sans: "Google Sans", sans-serif;
   --font-arabic: "Noto Sans Arabic", sans-serif;
 
   /* Spacing */
-  --spacing-container: 1000px;
+  --spacing-container: 1100px;
+
+  /* Large Spread Shadows as requested: shadow-[0px_15px_55px_0px_#0000000a] */
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.03);
+  --shadow-spread: 0 15px 55px rgba(0, 0, 0, 0.04);
+  --shadow-active: 0 20px 70px rgba(0, 0, 0, 0.07);
 }
 
 @layer base {
   body {
     @apply bg-brand-bg text-brand-text font-sans antialiased font-normal;
+    background-image: radial-gradient(#f1f1f1 0.5px, transparent 0.5px);
+    background-size: 32px 32px;
   }
   
-  h1 { @apply text-[44px] font-semibold tracking-tight leading-[1.1]; }
-  h2 { @apply text-[20px] font-semibold tracking-tight; }
+  h1 { @apply text-[42px] font-semibold tracking-tight leading-[1.1] mb-6; }
+  h2 { @apply text-[22px] font-semibold tracking-tight mb-4; }
+
+  button, a, [role="button"] {
+    @apply cursor-pointer transition-all duration-300 ease-in-out outline-none;
+  }
 }
 
 @layer components {
@@ -31,16 +42,16 @@
     @apply max-w-(--spacing-container) mx-auto px-6;
   }
 
-  .nav-item {
-    @apply text-[15px] font-medium text-brand-muted hover:text-brand-text transition-colors py-2;
-  }
-
   .btn-modern {
-    @apply px-7 py-3 bg-brand-accent text-white text-[15px] font-medium rounded-full hover:opacity-90 active:scale-95 transition-all;
+    @apply px-8 py-3 bg-brand-accent text-white text-[14px] font-semibold rounded-xl shadow-spread hover:shadow-active hover:-translate-y-0.5 active:scale-95 active:translate-y-0 transition-all;
   }
 
-  .surah-flat-row {
-    @apply flex items-center justify-between py-6 transition-all cursor-pointer;
+  .card-shadow {
+    @apply bg-white rounded-[24px] shadow-spread hover:shadow-active transition-all duration-500 ease-out;
+  }
+
+  .surah-item-row {
+    @apply flex items-center justify-between py-5 px-7 bg-white rounded-xl shadow-soft hover:shadow-spread hover:-translate-y-0.5 transition-all duration-300 cursor-pointer mb-3;
   }
 
   .arabic-text {
