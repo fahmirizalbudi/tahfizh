@@ -1,36 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  /* Modern Shadow-Based Design System */
-  --color-brand-bg: #ffffff;
-  --color-brand-surface: #fdfdfd;
-  --color-brand-accent: #1a1a1a;
-  --color-brand-primary: #1a73e8;
-  --color-brand-text: #111111;
-  --color-brand-muted: #666666;
+  /* High-End Color-Based Design System */
+  --color-brand-bg: #ffffff; /* Pure White Background */
+  --color-brand-surface: #ffffff; 
+  --color-brand-accent: #111111;
+  --color-brand-primary: #009667; /* Islamic Green */
+  --color-brand-text: #1a1a1a;
+  --color-brand-muted: #6b7280;
 
   /* Typography */
   --font-sans: "Google Sans", sans-serif;
   --font-arabic: "Noto Sans Arabic", sans-serif;
 
   /* Spacing */
-  --spacing-container: 1100px;
+  --spacing-container: 1280px;
 
-  /* Large Spread Shadows as requested: shadow-[0px_15px_55px_0px_#0000000a] */
-  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.03);
-  --shadow-spread: 0 15px 55px rgba(0, 0, 0, 0.04);
-  --shadow-active: 0 20px 70px rgba(0, 0, 0, 0.07);
+  /* Smooth, Multi-Layered Shadows */
+  --shadow-smooth: 0 2px 4px rgba(0,0,0,0.02), 0 4px 8px rgba(0,0,0,0.02), 0 8px 16px rgba(0,0,0,0.02);
+  --shadow-elevated: 0 4px 6px rgba(0,0,0,0.02), 0 12px 24px rgba(0,0,0,0.03), 0 24px 48px rgba(0,0,0,0.03);
 }
 
 @layer base {
   body {
     @apply bg-brand-bg text-brand-text font-sans antialiased font-normal;
-    background-image: radial-gradient(#f1f1f1 0.5px, transparent 0.5px);
-    background-size: 32px 32px;
   }
   
-  h1 { @apply text-[42px] font-semibold tracking-tight leading-[1.1] mb-6; }
-  h2 { @apply text-[22px] font-semibold tracking-tight mb-4; }
+  h1 { @apply text-[52px] font-semibold tracking-tight leading-[1.1] mb-6; }
+  h2 { @apply text-[28px] font-semibold tracking-tight mb-4; }
 
   button, a, [role="button"] {
     @apply cursor-pointer transition-all duration-300 ease-in-out outline-none;
@@ -39,19 +36,19 @@
 
 @layer components {
   .layout-container {
-    @apply max-w-(--spacing-container) mx-auto px-6;
+    @apply max-w-(--spacing-container) mx-auto px-8;
   }
 
   .btn-modern {
-    @apply px-8 py-3 bg-brand-accent text-white text-[14px] font-semibold rounded-xl shadow-spread hover:shadow-active hover:-translate-y-0.5 active:scale-95 active:translate-y-0 transition-all;
+    @apply px-8 py-3 bg-brand-accent text-white text-[14px] font-semibold rounded-xl shadow-smooth hover:shadow-elevated hover:-translate-y-0.5 active:scale-95 transition-all;
   }
 
-  .card-shadow {
-    @apply bg-white rounded-[24px] shadow-spread hover:shadow-active transition-all duration-500 ease-out;
+  .card-surface {
+    @apply bg-brand-surface rounded-[24px] shadow-smooth hover:shadow-elevated transition-all duration-500 ease-out;
   }
 
-  .surah-item-row {
-    @apply flex items-center justify-between py-5 px-7 bg-white rounded-xl shadow-soft hover:shadow-spread hover:-translate-y-0.5 transition-all duration-300 cursor-pointer mb-3;
+  .surah-card-item {
+    @apply flex items-center justify-between py-6 px-10 bg-brand-surface rounded-2xl shadow-smooth hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 cursor-pointer mb-4;
   }
 
   .arabic-text {
