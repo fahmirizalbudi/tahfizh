@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  /* Modern Flat Design System */
+  --color-brand-bg: #ffffff;
+  --color-brand-surface: #f9f9f9;
+  --color-brand-accent: #1a1a1a;
+  --color-brand-primary: #1a73e8;
+  --color-brand-text: #111111;
+  --color-brand-muted: #666666;
+
+  /* Typography - Modern & Proportional */
+  --font-sans: "Google Sans", sans-serif;
+  --font-arabic: "Noto Sans Arabic", sans-serif;
+
+  /* Spacing */
+  --spacing-container: 1000px;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-text font-sans antialiased font-normal;
+  }
+  
+  h1 { @apply text-[44px] font-semibold tracking-tight leading-[1.1]; }
+  h2 { @apply text-[20px] font-semibold tracking-tight; }
+}
+
+@layer components {
+  .layout-container {
+    @apply max-w-(--spacing-container) mx-auto px-6;
+  }
+
+  .nav-item {
+    @apply text-[15px] font-medium text-brand-muted hover:text-brand-text transition-colors py-2;
+  }
+
+  .btn-modern {
+    @apply px-7 py-3 bg-brand-accent text-white text-[15px] font-medium rounded-full hover:opacity-90 active:scale-95 transition-all;
+  }
+
+  .surah-flat-row {
+    @apply flex items-center justify-between py-6 transition-all cursor-pointer;
+  }
+
+  .arabic-text {
+    @apply font-arabic text-2xl text-right text-brand-text group-hover:text-brand-primary transition-colors font-semibold;
+  }
+}
