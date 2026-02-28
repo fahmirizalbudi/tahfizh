@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tahfizh.fahmirizalbudi.app/sitemap.xml
